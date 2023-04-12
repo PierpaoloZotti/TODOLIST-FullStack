@@ -114,3 +114,13 @@ select {
    background-color: #c51700;
    color: #fff;
 }
+
+.editTitle {
+   background-color: #ddd;
+   border: none;
+   border-radius: 4px;
+   caret-color: #044764;
+   font-size: 16px;
+   padding: 0;
+   font-weight: 400;
+}

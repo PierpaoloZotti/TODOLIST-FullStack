@@ -84,6 +84,23 @@ const createRow = (task) => {
 
     const btnEdit = createElement('button', '', '<span class="material-symbols-outlined"> edit </span>');
     const btnDelete = createElement('button', '', '<span class="material-symbols-outlined"> delete </span>');
+
+    const editForm = createElement('form');
+    const editInput = createElement('input');
+
+    editInput.value = title;
+    editInput.classList.add('editTitle');
+    editForm.appendChild(editInput);
+
+    editForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        updateTask({ id, title: editInput.value, status: status })
+    });
+
+    btnEdit.addEventListener('click', () => {
+        tdTitle.innerText = '';
+        tdTitle.appendChild(editForm);
+    });
     btnEdit.classList.add('btnAction');
     btnDelete.classList.add('btnAction');
     btnDelete.addEventListener('click', () => deleteTask(id));
